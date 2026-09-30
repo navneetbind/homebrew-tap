@@ -1,8 +1,8 @@
 class ClaudePowertools < Formula
   desc "Browse, move and back up Claude chats, memory and MCP; manage multiple Claude app instances"
   homepage "https://github.com/navneetbind/claude-powertools"
-  url "https://github.com/navneetbind/claude-powertools/archive/refs/tags/v1.0.1.tar.gz"
-  sha256 "f0804edfa77a0976ddd4fca90c851b1071aea524eb391532bd0850e9a24cb74b"
+  url "https://github.com/navneetbind/claude-powertools/archive/refs/tags/v1.0.2.tar.gz"
+  sha256 "7c90c26d34342e37c59c99275cb85b42e117ed11ccca135b32ac6c7ad68a2dd1"
   license :cannot_represent
   depends_on :macos
 
