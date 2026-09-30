@@ -14,6 +14,23 @@ cask "claude-powertools" do
   # Mac's Xcode / Command Line Tools are older than Homebrew wants.
   binary "claude-powertools-#{version}/dist/powertools"
 
+  # People who first installed with the old git-clone + install.sh route have a
+  # copy in ~/.local/bin, which comes BEFORE brew's on PATH and would shadow every
+  # upgrade. Remove it (and the old launcher app) - but only if it really is ours.
+  preflight do
+    system_command "/usr/bin/pkill", args: ["-f", "powertools serve"], must_succeed: false
+    old = File.expand_path("~/.local/bin/powertools")
+    if File.file?(old) && !File.symlink?(old) && File.read(old, 4096).include?("Claude PowerTools")
+      File.delete(old)
+      puts "Removed the old install at #{old} (brew manages powertools now)."
+    end
+    app = File.expand_path("~/Applications/Claude PowerTools.app")
+    if File.exist?(File.join(app, "Contents", "MacOS", "powertools"))
+      FileUtils.rm_rf(app)
+      puts "Removed the old launcher app #{app}."
+    end
+  end
+
   caveats <<~EOS
     Start the dashboard:
       powertools open
