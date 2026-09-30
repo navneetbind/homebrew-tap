@@ -18,7 +18,7 @@ cask "claude-powertools" do
   # copy in ~/.local/bin, which comes BEFORE brew's on PATH and would shadow every
   # upgrade. Remove it (and the old launcher app) - but only if it really is ours.
   preflight do
-    system_command "/usr/bin/pkill", args: ["-f", "powertools serve"], must_succeed: false
+    system_command "/usr/bin/pkill", args: ["-f", "[/ ]powertools(\\.py)?( serve.*)?$"], must_succeed: false
     old = File.expand_path("~/.local/bin/powertools")
     if File.file?(old) && !File.symlink?(old) && File.read(old, 4096).include?("Claude PowerTools")
       File.delete(old)
