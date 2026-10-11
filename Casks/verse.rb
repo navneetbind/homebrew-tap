@@ -1,6 +1,6 @@
 cask "verse" do
-  version "0.3.1"
-  sha256 "9bf18a34873e65c7da7de9d415e2fc2c535abaa79a801504399cb1cc788549c1"
+  version "0.3.2"
+  sha256 "ec530fc0706d4cb73846ef192192d906412c95a553cb3735a853b56b6e0a16bc"
 
   url "https://github.com/navneetbind/verse/releases/download/v#{version}/Verse-#{version}.dmg"
   name "Verse"
