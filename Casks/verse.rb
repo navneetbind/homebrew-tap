@@ -1,10 +1,10 @@
 cask "verse" do
-  version "0.3.3"
-  sha256 "a4dd36940f284ebb65cef02fa54282adec713fe6d892ade55b23b827a52aeaba"
+  version "0.4.0"
+  sha256 "a17e0cb63e5ccc5b6c0dfb1c14806d486e4328ca9d15f304c4205ab9be5472fa"
 
   url "https://github.com/navneetbind/verse/releases/download/v#{version}/Verse-#{version}.dmg"
   name "Verse"
-  desc "Synced YouTube Music lyrics in the menu bar"
+  desc "Synced YouTube Music and Spotify lyrics in the menu bar"
   homepage "https://github.com/navneetbind/verse"
 
   depends_on macos: ">= :ventura"
