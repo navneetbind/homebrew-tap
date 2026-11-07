@@ -1,6 +1,6 @@
 cask "claude-powertools" do
-  version "1.0.3"
-  sha256 "c54264fbb5c3f5c032ebebea1f082cb074318cb7b01f0bd69689554eb442ef29"
+  version "1.0.4"
+  sha256 "c24bf0a8cf384ffb721afc0867d46f2e4f21295b86ce086bb9b1017e5637b271"
 
   url "https://github.com/navneetbind/claude-powertools/archive/refs/tags/v#{version}.tar.gz"
   name "Claude PowerTools"
